@@ -1,9 +1,4 @@
-# fly.toml app configuration file generated for glance-quiet-sun-6656 on 2025-03-19T13:12:25+09:00
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
-
-app = 'glance-quiet-sun-6656'
+app = 'glance-7e7dqw'
 primary_region = 'nrt'
 
 [http_service]
@@ -15,6 +10,6 @@ primary_region = 'nrt'
   processes = ['app']
 
 [[vm]]
-  memory = '1gb'
+  memory = '512mb'
   cpu_kind = 'shared'
   cpus = 1
