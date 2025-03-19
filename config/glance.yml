@@ -1,0 +1,164 @@
+server:
+  assets-path: /app/assets
+
+theme:
+  # Note: assets are cached by the browser, changes to the CSS file
+  # will not be reflected until the browser cache is cleared (Ctrl+F5)
+  custom-css-file: /assets/user.css
+  light: false
+  background-color: 220 30 15
+  primary-color: 220 25 25
+  accent-color: 190 100 50
+  text-color: 0 0 95
+
+# Pages configuration
+pages:
+  - name: Home
+    columns:
+      - size: small
+        widgets:
+          - type: weather
+            location: Republic of Korea
+            units: metric
+            hour-format: 24h
+            hide-location: true
+            show-area-name: false
+          - type: markets
+            markets:
+              - symbol: 360750.KS
+                name: Mirae Asset Maps Management - Mirae Asset Tiger S&P500 ETF
+              - symbol: 441800.KS
+                name: Timefolio Timefolio Korea Plus Dividend Active ETF
+              - symbol: BTC-USD
+                name: Bitcoin
+              - symbol: NVDA
+                name: NVIDIA
+              - symbol: AAPL
+                name: Apple
+              - symbol: KOLD
+                name: ProShares UltraShort Bloomberg Natural Gas
+            sort-by: change
+
+      - size: full
+        widgets:
+          - type: rss
+            limit: 20
+            collapse-after: 10
+            cache: 12h
+            feeds:
+              - url: https://medium.com/feed/@jundol97
+                title: medium blog
+                style: detailed-list
+                template: |
+                  <div class="feed-items">
+                  {{ range .Items }}
+                    <div class="feed-item custom-feed-item">
+                      <a href="{{ .Link }}" class="feed-item-title custom-title" style="font-size: 1.5rem !important; font-weight: 700 !important; color: #00bcd4 !important; display: block !important; margin-bottom: 0.5rem !important;">{{ .Title }}</a>
+                      <span class="feed-item-date custom-date" style="font-size: 0.7rem !important; color: #b0bec5 !important; display: block !important; margin-bottom: 0.5rem !important;">{{ formatDate .PublishedParsed "2006-01-02" }}</span>
+                      <div class="feed-item-description" style="font-size: 0.9rem !important; color: #b0bec5 !important;">{{ .Description }}</div>
+                    </div>
+                  {{ end }}
+                  </div>
+
+      - size: small
+        widgets:
+          - type: calendar
+            first-day-of-week: monday
+
+          - type: bookmarks
+            groups:
+              - title: Development
+                color: 210 80 50
+                links:
+                  - title: Stack Overflow
+                    url: https://stackoverflow.com/
+                    icon: si:stackoverflow
+                  - title: MDN Web Docs
+                    url: https://developer.mozilla.org/
+                    icon: si:mozilla
+                  - title: Docker Hub
+                    url: https://hub.docker.com/
+                    icon: si:docker
+                  - title: Github
+                    url: https://github.com/
+                    icon: si:github
+              - title: Entertainment
+                color: 340 80 50
+                links:
+                  - title: Netflix
+                    url: https://www.netflix.com/
+                    icon: si:netflix
+                  - title: Disney+
+                    url: https://www.disneyplus.com/
+                    icon: di:disney-plus
+                  - title: YouTube
+                    url: https://www.youtube.com/
+                    icon: si:youtube
+
+  - name: Steam
+    columns:
+      - size: full
+        widgets:
+          - type: group
+            widgets:
+              - type: custom-api
+                title: Steam Special Discounts
+                cache: 12h
+                url: https://store.steampowered.com/api/featuredcategories?cc=us
+                template: |
+                  <ul class="list list-gap-10 collapsible-container" data-collapse-after="10">
+                  {{ range .JSON.Array "specials.items" }}
+                    <li>
+                      <a class="size-h4 color-highlight block text-truncate" href="https://store.steampowered.com/app/{{ .Int "id" }}/">{{ .String "name" }}</a>
+                      <ul class="list-horizontal-text">
+                        <li>{{ div (.Int "final_price" | toFloat) 100 | printf "$%.2f" }}</li>
+                        {{ $discount := .Int "discount_percent" }}
+                        <li{{ if ge $discount 40 }} class="color-positive"{{ end }}>{{ $discount }}% off</li>
+                      </ul>
+                    </li>
+                  {{ end }}
+                  </ul>          
+
+  - name: Reddit
+    columns:
+      - size: full
+        widgets:
+          - type: reddit
+            show-thumbnails: true
+            collapse-after: 5
+            subreddit: RotMG
+          - type: reddit
+            show-thumbnails: true
+            collapse-after: 5
+            subreddit: PHP
+          - type: reddit
+            show-thumbnails: true
+            collapse-after: 5
+            subreddit: SpringBoot
+          - type: reddit
+            show-thumbnails: true
+            collapse-after: 5
+            subreddit: ClaudeAI
+
+  - name: Releases
+    columns:
+      - size: full
+        widgets:
+          - type: releases
+            cache: 1d
+            token: ${GITHUB_TOKEN}
+            show-source-icon: true
+            collapse-after: 10
+            limit: 30
+            repositories:
+              - glanceapp/glance
+              - getsentry/sentry-php
+              - spring-projects/spring-boot
+              - kubernetes/kubernetes
+              - openai/openai-agents-python
+              - Shopify/toxiproxy
+              - dockerhub:bitnami/elasticsearch
+              - dockerhub:bitnami/kafka
+              - dockerhub:bitnami/redis
+              - dockerhub:bitnami/rabbitmq
+              - dockerhub:ubuntu

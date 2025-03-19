@@ -1,0 +1,340 @@
+/* Dark Modern Blog-inspired Design for Glance */
+:root {
+  /* Color Palette - Dark theme with high contrast */
+  --color-bg: #1a2030;
+  --color-primary: #242a38;
+  --color-accent: #b0bec5;
+  --color-text: #ffffff;
+  --color-text-secondary: #b0bec5;
+  --color-border: #323a4e;
+  --color-success: #4caf50;
+  --color-warning: #ff9800;
+  
+  /* Typography */
+  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height: 1.5;
+  --heading-line-height: 1.2;
+  
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2.5rem;
+  
+  /* Borders */
+  --border-radius: 8px;
+  --border-width: 1px;
+}
+
+/* Base Styles */
+body {
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size-base) !important;
+  line-height: var(--line-height) !important;
+  font-weight: 400 !important;
+}
+
+/* Typography Refinements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600 !important;
+  line-height: var(--heading-line-height) !important;
+  margin-top: var(--spacing-lg) !important;
+  margin-bottom: var(--spacing-md) !important;
+  color: var(--color-text) !important;
+}
+
+p {
+  margin-bottom: var(--spacing-md) !important;
+  color: var(--color-text) !important;
+}
+
+/* Link Styling */
+a:not(.color-inherit) {
+  color: var(--color-accent) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease-in-out !important;
+  font-weight: 500 !important;
+}
+
+a:hover:not(.color-inherit) {
+  color: #4dd0e1 !important;
+  text-decoration: underline !important;
+}
+
+/* Widget Styling - Blog Post Card Style */
+.widget {
+  background-color: var(--color-primary) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
+  margin-bottom: var(--spacing-lg) !important;
+  overflow: hidden !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.widget:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+}
+
+.widget-header {
+  border-bottom: var(--border-width) solid var(--color-border) !important;
+  padding: var(--spacing-md) !important;
+  font-weight: 700 !important;
+  font-size: 1.4rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  color: var(--color-text) !important;
+}
+
+/* RSS widget specific styling */
+.widget[data-widget-type="rss"] .widget-header {
+  border-bottom-color: var(--color-accent) !important;
+}
+
+.widget-content {
+  padding: var(--spacing-md) !important;
+}
+
+/* Button Styling */
+button, .button {
+  background-color: var(--color-accent) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+}
+
+button:hover, .button:hover {
+  background-color: #26c6da !important;
+}
+
+/* Lists */
+ul.list {
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+
+ul.list li {
+  border-bottom: var(--border-width) solid var(--color-border) !important;
+  padding: var(--spacing-sm) 0 !important;
+  color: var(--color-text) !important;
+}
+
+ul.list li:last-child {
+  border-bottom: none !important;
+}
+
+/* Card styling */
+.card {
+  background-color: var(--color-primary) !important;
+  border-radius: var(--border-radius) !important;
+  border: var(--border-width) solid var(--color-border) !important;
+  padding: var(--spacing-md) !important;
+  margin-bottom: var(--spacing-md) !important;
+}
+
+/* Tables */
+table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin-bottom: var(--spacing-lg) !important;
+}
+
+th, td {
+  padding: var(--spacing-sm) var(--spacing-md) !important;
+  border-bottom: var(--border-width) solid var(--color-border) !important;
+  text-align: left !important;
+  color: var(--color-text) !important;
+}
+
+th {
+  font-weight: 600 !important;
+  color: var(--color-text) !important;
+}
+
+/* RSS Feed Styling */
+.feed-item {
+  margin-bottom: 1.75rem !important;
+  padding-bottom: 1.5rem !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.feed-item:last-child {
+  border-bottom: none !important;
+}
+
+.feed-item-title a {
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+  color: var(--color-accent) !important;
+}
+
+.feed-item-date {
+  color: var(--color-text-secondary) !important;
+  font-size: 0.75rem !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+}
+
+.feed-item-description {
+  font-size: 0.9rem !important;
+  color: var(--color-text-secondary) !important;
+}
+
+/* Extreme specificity to override RSS feed styles */
+.widget[data-widget-type="rss"] .feed-item .feed-item-title a {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: var(--color-accent) !important;
+  margin-bottom: 0.6rem !important;
+  display: block !important;
+}
+
+.widget[data-widget-type="rss"] .feed-item .feed-item-date {
+  font-size: 0.75rem !important;
+  color: var(--color-text-secondary) !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+}
+
+/* Weather Widget */
+.weather-widget {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.weather-temp {
+  font-size: 2rem !important;
+  font-weight: 300 !important;
+  color: var(--color-text) !important;
+}
+
+/* Calendar styling */
+.calendar td {
+  text-align: center !important;
+  color: var(--color-text) !important;
+}
+
+.calendar .today {
+  background-color: var(--color-accent) !important;
+  color: white !important;
+  border-radius: 50% !important;
+}
+
+/* Bookmarks */
+.bookmark-group {
+  margin-bottom: var(--spacing-lg) !important;
+}
+
+.bookmark-title {
+  font-weight: 600 !important;
+  margin-bottom: var(--spacing-sm) !important;
+  color: var(--color-text) !important;
+}
+
+.bookmark-link {
+  display: flex !important;
+  align-items: center !important;
+  padding: var(--spacing-sm) !important;
+  border-radius: var(--border-radius) !important;
+  transition: background-color 0.2s ease !important;
+  color: var(--color-text) !important;
+}
+
+.bookmark-link:hover {
+  background-color: var(--color-border) !important;
+}
+
+.bookmark-link svg {
+  margin-right: var(--spacing-sm) !important;
+}
+
+/* Utility Classes */
+.text-truncate {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.color-highlight {
+  color: var(--color-accent) !important;
+}
+
+.color-success {
+  color: var(--color-success) !important;
+}
+
+.color-warning {
+  color: var(--color-warning) !important;
+}
+
+.color-secondary {
+  color: var(--color-text-secondary) !important;
+}
+
+/* Fix for title visibility */
+.title.size-title-dynamic.color-primary-if-not-visited,
+a.title.size-title-dynamic.color-primary-if-not-visited,
+.size-title, .title {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1.7rem !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+}
+
+/* Fix for specific classes that might have visibility issues */
+.size-h4, h4, .color-highlight {
+  color: var(--color-accent) !important;
+  font-weight: 600 !important;
+}
+
+/* Steam discounts styling */
+.list-horizontal-text li {
+  color: var(--color-text) !important;
+}
+
+.color-positive {
+  color: var(--color-success) !important;
+}
+
+/* Fix for text visibility */
+span, div, p, li, a {
+  color: var(--color-text) !important;
+}
+
+/* Highlight active elements */
+a:focus, button:focus, .widget:focus-within {
+  outline: 2px solid var(--color-accent) !important;
+  outline-offset: 2px !important;
+}
+
+/* Override for RSS feeds */
+.detailed-list .feed-item-title a {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: var(--color-accent) !important;
+  line-height: 1.3 !important;
+}
+
+.detailed-list .feed-item-date {
+  font-size: 0.7rem !important;
+  margin-bottom: 0.6rem !important;
+}
+
+/* Force extra specificity */
+body .widget[data-widget-type="rss"] .feed-item .feed-item-title a {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: var(--color-accent) !important;
+}
