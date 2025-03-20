@@ -1,7 +1,6 @@
 - type: bookmarks
   groups:
     - title: Development
-      color: 210 80 50
       links:
         - title: Stack Overflow
           url: https://stackoverflow.com/
@@ -16,7 +15,6 @@
           url: https://github.com/
           icon: si:github
     - title: Entertainment
-      color: 340 80 50
       links:
         - title: Netflix
           url: https://www.netflix.com/
