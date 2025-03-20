@@ -1,0 +1,18 @@
+- type: releases
+  cache: 1d
+  token: ${GITHUB_TOKEN}
+  show-source-icon: true
+  collapse-after: 10
+  limit: 30
+  repositories:
+    - glanceapp/glance
+    - getsentry/sentry-php
+    - spring-projects/spring-boot
+    - kubernetes/kubernetes
+    - openai/openai-agents-python
+    - Shopify/toxiproxy
+    - dockerhub:bitnami/elasticsearch
+    - dockerhub:bitnami/kafka
+    - dockerhub:bitnami/redis
+    - dockerhub:bitnami/rabbitmq
+    - dockerhub:ubuntu

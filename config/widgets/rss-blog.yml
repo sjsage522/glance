@@ -1,0 +1,9 @@
+- type: rss
+  title: Blog
+  limit: 20
+  collapse-after: 7
+  cache: 12h
+  style: detailed-list
+  feeds:
+    - url: https://medium.com/feed/@jundol97
+      title: medium blog

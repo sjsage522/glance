@@ -1,0 +1,16 @@
+- type: reddit
+  show-thumbnails: true
+  collapse-after: 5
+  subreddit: RotMG
+- type: reddit
+  show-thumbnails: true
+  collapse-after: 5
+  subreddit: PHP
+- type: reddit
+  show-thumbnails: true
+  collapse-after: 5
+  subreddit: SpringBoot
+- type: reddit
+  show-thumbnails: true
+  collapse-after: 5
+  subreddit: ClaudeAI

@@ -1,0 +1,6 @@
+- type: weather
+  location: Republic of Korea
+  units: metric
+  hour-format: 24h
+  hide-location: true
+  show-area-name: false

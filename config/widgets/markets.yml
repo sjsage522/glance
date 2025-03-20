@@ -1,0 +1,15 @@
+- type: markets
+  markets:
+    - symbol: 360750.KS
+      name: Mirae Asset Maps Management - Mirae Asset Tiger S&P500 ETF
+    - symbol: 441800.KS
+      name: Timefolio Timefolio Korea Plus Dividend Active ETF
+    - symbol: BTC-USD
+      name: Bitcoin
+    - symbol: NVDA
+      name: NVIDIA
+    - symbol: AAPL
+      name: Apple
+    - symbol: KOLD
+      name: ProShares UltraShort Bloomberg Natural Gas
+  sort-by: change

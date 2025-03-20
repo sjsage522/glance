@@ -1,0 +1,29 @@
+- type: bookmarks
+  groups:
+    - title: Development
+      color: 210 80 50
+      links:
+        - title: Stack Overflow
+          url: https://stackoverflow.com/
+          icon: si:stackoverflow
+        - title: MDN Web Docs
+          url: https://developer.mozilla.org/
+          icon: si:mozilla
+        - title: Docker Hub
+          url: https://hub.docker.com/
+          icon: si:docker
+        - title: Github
+          url: https://github.com/
+          icon: si:github
+    - title: Entertainment
+      color: 340 80 50
+      links:
+        - title: Netflix
+          url: https://www.netflix.com/
+          icon: si:netflix
+        - title: Disney+
+          url: https://www.disneyplus.com/
+          icon: di:disney-plus
+        - title: YouTube
+          url: https://www.youtube.com/
+          icon: si:youtube
