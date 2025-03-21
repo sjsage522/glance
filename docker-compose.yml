@@ -5,7 +5,7 @@ services:
     volumes:
       - ./config:/app/config
       - ./assets:/app/assets
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # - /var/run/docker.sock:/var/run/docker.sock:ro
     ports:
       - 8080:8080
     env_file: .env
