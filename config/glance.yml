@@ -15,6 +15,7 @@ pages:
       - size: small
         widgets:
           !include: widgets/custom/intro.yml
+          !include: widgets/custom/clock.yml
           !include: widgets/calendar.yml
           !include: widgets/bookmarks.yml
       - size: full
