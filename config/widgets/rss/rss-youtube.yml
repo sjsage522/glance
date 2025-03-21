@@ -1,0 +1,9 @@
+- type: rss
+  collapse-after: 20
+  title: Youtube
+  style: detailed-list
+  feeds:
+    - url: https://www.youtube.com/feeds/videos.xml?channel_id=UCSLrpBAzr-ROVGHQ5EmxnUg
+      title: "@codingapple"
+    - url: https://www.youtube.com/feeds/videos.xml?channel_id=UCsHc4-VM4jnYluxikvMsPNg
+      title: "@jinhk1016"

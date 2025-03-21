@@ -1,4 +1,5 @@
 - type: rss
+  collapse-after: 20
   title: News
   style: detailed-list
   feeds:

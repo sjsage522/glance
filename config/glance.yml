@@ -15,12 +15,12 @@ pages:
       - size: small
         widgets:
           !include: widgets/custom/intro.yml
-          !include: widgets/custom/clock.yml
+          !include: widgets/clock.yml
           !include: widgets/calendar.yml
           !include: widgets/bookmarks.yml
       - size: full
         widgets:
-          !include: widgets/rss-blog.yml
+          !include: widgets/rss/rss-blog.yml
       - size: small
         widgets:
           !include: widgets/weather.yml
@@ -31,7 +31,10 @@ pages:
     columns:
       - size: full
         widgets:
-          !include: widgets/rss.yml
+          - type: split-column
+            widgets:
+              !include: widgets/rss/rss-news.yml
+              !include: widgets/rss/rss-youtube.yml
 
   - name: Entertainment
     columns:

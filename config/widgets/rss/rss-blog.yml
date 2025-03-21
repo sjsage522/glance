@@ -1,7 +1,7 @@
 - type: rss
+  collapse-after: 7
   title: Blog
   limit: 20
-  collapse-after: 7
   cache: 12h
   style: detailed-list
   feeds:
