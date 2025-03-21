@@ -23,6 +23,7 @@ pages:
           !include: widgets/rss/rss-blog.yml
       - size: small
         widgets:
+          !include: widgets/custom/random-fact.yml
           !include: widgets/weather.yml
           !include: widgets/markets.yml
           !include: widgets/server-stats.yml
