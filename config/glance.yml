@@ -47,3 +47,9 @@ pages:
       - size: full
         widgets:
           !include: widgets/releases.yml
+          
+  - name: Internal Containers
+    columns:
+      - size: full
+        widgets:
+          !include: widgets/docker-containers.yml
