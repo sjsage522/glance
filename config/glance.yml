@@ -24,6 +24,7 @@ pages:
         widgets:
           !include: widgets/weather.yml
           !include: widgets/markets.yml
+          !include: widgets/server-stats.yml
 
   - name: RSS
     columns:
