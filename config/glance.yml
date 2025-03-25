@@ -32,10 +32,14 @@ pages:
     columns:
       - size: full
         widgets:
-          - type: split-column
-            widgets:
-              !include: widgets/rss/rss-news.yml
-              !include: widgets/rss/rss-youtube.yml
+          !include: widgets/rss/rss-youtube.yml
+      - size: small
+        widgets:
+          !include: widgets/rss/rss-news.yml
+      - size: full
+        widgets:
+          !include: widgets/rss/rss-tech.yml
+
 
   - name: Entertainment
     columns:

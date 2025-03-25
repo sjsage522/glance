@@ -1,0 +1,6 @@
+- type: rss
+  collapse-after: 20
+  title: Tech
+  feeds:
+    - url: https://martinfowler.com/feed.atom
+      title: Martin Fowler

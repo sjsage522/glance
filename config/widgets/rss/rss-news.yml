@@ -1,7 +1,6 @@
 - type: rss
   collapse-after: 20
   title: News
-  style: detailed-list
   feeds:
     - url: https://feeds.bloomberg.com/markets/news.rss
       title: Bloomberg
