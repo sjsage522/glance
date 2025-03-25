@@ -1,0 +1,20 @@
+- type: custom-api
+  title: Glance Releases
+  cache: 1h
+  url: https://api.github.com/repos/sjsage522/glance/releases
+  headers:
+    Accept: application/json; charset=utf-8
+  template: |
+    <div style="max-width: 800px; margin: 20px auto;">
+      <ul style="list-style: none; padding: 0;">
+      {{ range .JSON.Array "" }}
+        <li style="margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
+          <a href="{{ .String "html_url" }}" target="_blank" style="font-size: 18px; text-decoration: none;">
+            {{ .String "name" }}
+          </a>
+          <p style="margin: 5px 0; font-size: 14px; white-space: pre-wrap;">{{ .String "body" }}</p>
+          <small>Published at: {{ .String "published_at" }}</small>
+        </li>
+      {{ end }}
+      </ul>
+    </div>

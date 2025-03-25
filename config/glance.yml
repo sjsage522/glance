@@ -54,6 +54,9 @@ pages:
 
   - name: Releases
     columns:
-      - size: full
+      - size: full        
         widgets:
-          !include: widgets/releases.yml
+          - type: split-column
+            widgets:
+              !include: widgets/custom/glance-release.yml
+              !include: widgets/releases.yml
